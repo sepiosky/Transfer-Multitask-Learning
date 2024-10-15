@@ -1,0 +1,41 @@
+EXPERIMENT_NAME: 'pretrain'
+
+DATASET:
+  NAME: 'cifar10'
+  DEFAULT_SIZE: (32, 32)
+  RESIZE_SHAPE: (32, 32)
+  INPUT_CHANNELS: 3
+  BATCH_SIZE: 32
+  PREPROCESS: True
+  NORMALIZE_MEAN:
+    - 0.4914
+    - 0.4822
+    - 0.4465
+  NORMALIZE_STD:
+    - 0.2023
+    - 0.1994
+    - 0.2010
+
+MODEL:
+  PRETRAINED_PATH: ''
+  BACKBONE:
+    NAME: 'protonet'
+    PRETRAINED_PATH: ''
+    FREEZE: False
+  BODY:
+    HIDDEN_DIMS:
+      - 512
+      - 256
+    OUTPUT_DIM: 10
+    HIDDEN_DIMS_FREEZE:
+      - False
+      - False
+      - False
+  HEADS:
+    NAMES: []
+    INPUT_DIMS: []
+    OUTPUT_DIMS: [10]
+  SOLVER:
+    TOTAL_EPOCHS: 10
+    SCHEDULER:
+      NAME: 'multi_steps'

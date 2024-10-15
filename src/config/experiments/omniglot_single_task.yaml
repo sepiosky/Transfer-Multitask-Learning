@@ -1,0 +1,38 @@
+EXPERIMENT_NAME: omniglot_single_task
+DATASET:
+  NAME: omniglot
+  ALPHABET: Cyrillic
+  DEFAULT_SIZE:
+  - 105
+  - 105
+  RESIZE_SHAPE:
+  - 32
+  - 32
+  INPUT_CHANNELS: 1
+  BATCH_SIZE: 8
+  PREPROCESS: true
+MODEL:
+  PRETRAINED_PATH: ''
+  BACKBONE:
+    NAME: protonet
+    PRETRAINED_PATH: ''
+    FREEZE: false
+  BODY:
+    HIDDEN_DIMS:
+    - 512
+    - 256
+    HIDDEN_DIMS_FREEZE:
+    - false
+    - false
+    OUTPUT_DIMS:
+    - 33
+    OUTPUT_DIM: 33
+  HEADS:
+    NAMES: []
+    INPUT_DIMS: []
+    OUTPUT_DIMS:
+    - 33
+  SOLVER:
+    TOTAL_EPOCHS: 10
+    SCHEDULER:
+      NAME: multi_steps

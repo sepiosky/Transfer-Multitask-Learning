@@ -1,0 +1,25 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+src = {editable = true, path = "."}
+yacs = "*"
+torch = "*"
+torchvision = "*"
+jupyter = "*"
+notebook = "*"
+matplotlib = "*"
+albumentations = "*"
+numpy = "*"
+pandas = "*"
+opencv-contrib-python = "*"
+sklearn = "*"
+pdbpp = "*"
+tqdm = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.9"

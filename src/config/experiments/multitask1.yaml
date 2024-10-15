@@ -1,0 +1,181 @@
+EXPERIMENT_NAME: multitask1
+DATASET:
+  BATCH_SIZE: 32
+  DEFAULT_SIZE: (105, 105)
+  RESIZE_SHAPE: (32, 32)
+  INPUT_CHANNELS: 3
+  NAME: omniglot
+  PREPROCESS: true
+MODEL:
+  BACKBONE:
+    FREEZE: false
+    NAME: protonet
+    PRETRAINED_PATH: ''
+  BODY:
+    HIDDEN_DIMS:
+    - 512
+    OUTPUT_DIM: 256
+    HIDDEN_DIMS_FREEZE:
+    - false
+    - false
+  HEADS:
+    INPUT_DIMS:
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    - 256
+    NAMES:
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    - simple_head
+    OUTPUT_DIMS:
+    - 20
+    - 29
+    - 26
+    - 41
+    - 40
+    - 24
+    - 46
+    - 14
+    - 26
+    - 34
+    - 33
+    - 22
+    - 26
+    - 43
+    - 24
+    - 48
+    - 22
+    - 16
+    - 52
+    - 47
+    - 40
+    - 26
+    - 40
+    - 41
+    - 33
+    - 14
+    - 42
+    - 23
+    - 17
+    - 55
+    HIDDEN_DIMS:
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    - []
+    HIDDEN_DIMS_FREEZE:
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+    - - false
+  PRETRAINED_PATH: ''
+  SOLVER:
+    SCHEDULER:
+      NAME: multi_steps
+    TOTAL_EPOCHS: 10

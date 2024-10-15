@@ -1,0 +1,39 @@
+EXPERIMENT_NAME: 'from_scratch'
+
+DATASET:
+  NAME: 'tinyimagesubset'
+  DEFAULT_SIZE:
+    - 28
+    - 28
+  RESIZE_SHAPE:
+    - 32
+    - 32
+  INPUT_CHANNELS: 3
+  BATCH_SIZE: 16
+  PREPROCESS: True
+
+
+MODEL:
+  PRETRAINED_PATH: ''
+  BACKBONE:
+    NAME: 'protonet'
+    PRETRAINED_PATH: ''
+    FREEZE: False
+  BODY:
+    INPUT_DIM: 512 # for 1 input channel and 28*28 => 128
+    HIDDEN_DIMS:
+      - 512
+      - 256
+    OUTPUT_DIM: 10
+    HIDDEN_DIMS_FREEZE:
+      - False
+      - False
+      - False
+  HEADS:
+    NAMES: []
+    INPUT_DIMS: []
+    OUTPUT_DIMS: [10]
+  SOLVER:
+    TOTAL_EPOCHS: 10
+    SCHEDULER:
+      NAME: 'multi_steps'
